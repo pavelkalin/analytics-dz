@@ -1,7 +1,9 @@
 # Файлы домашек
 
-[Ссылка общего описания](https://github.com/Dju999/data_analytics/blob/master/slides/docker_start_up.md)
+[Задания и туториулы](https://github.com/Dju999/data_analytics/tree/master/slides)
 
 ##SQL для аналитика
 
 [ДЗ 0. Docker compose файл](/SQL_for_analyst/docker-compose.yml)
+
+[ДЗ 1. SQL](/SQL_for_analyst/dz1.sql)

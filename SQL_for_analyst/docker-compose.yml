@@ -8,6 +8,10 @@ services:
     image: postgres:10-alpine
     restart: always
     ports: ["5433:5432"]
+    environment:
+      - PGDATA=/var/lib/postgresql/data/pg_data
+    volumes:
+      - /netology-db:/var/lib/postgresql/data/pg_data
   redis_host:
     image: redis:4.0.11-alpine
     restart: always
@@ -27,10 +31,8 @@ services:
       - APP_POSTGRES_PORT=5432
       - APP_REDIS_HOST=redis_host
       - APP_REDIS_PORT=6379
-      - PGDATA=/var/lib/postgresql/data/pg_data
     volumes:
       - /tmp/data:/data
-      - /netology-db:/var/lib/postgresql/data/pg_data
     links: [mongo_host, postgres_host, redis_host]
   flask-app:
     build:
@@ -48,10 +50,8 @@ services:
       - APP_REDIS_HOST=redis_host
       - APP_REDIS_PORT=6379
       - BIND_PORT=5001
-      - PGDATA=/var/lib/postgresql/data/pg_data
     volumes:
       - /tmp/data:/data
-      - /netology-db:/var/lib/postgresql/data/pg_data
     links: [mongo_host, postgres_host, redis_host]
     ports:
       - "5001:5001"
