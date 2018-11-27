@@ -129,8 +129,8 @@ A = TypeVar('A', str, int) # Тип или str или int
 def binary_to_decimal(binary: A) -> int:
     """
     Метод конвертации двоичного числа в текстовом представлении в десятичное
-    :param binary:
-    :return:
+    :param A binary: Двоичное число в виде строки или числа
+    :return: Десятичное число
     """
     binary = str(binary)
     factor = len(binary)
